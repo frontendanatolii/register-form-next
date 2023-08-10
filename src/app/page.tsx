@@ -12,9 +12,14 @@ export async function getUser() {
   } catch (error) {
     return error;
   }
+};
+
+interface PageProps {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default async function Home() {
+export default async function Home({ params, searchParams }: PageProps) {
   const user = await getUser();
 
   return (
