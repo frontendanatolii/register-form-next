@@ -1,7 +1,7 @@
 import axios from "axios";
 import { cookies } from "next/headers";
 
-export async function getUser() {
+async function getUser() {
   try {
     const response = await axios.get(`${process.env.domain}/api/users/me`, {
       headers: {
